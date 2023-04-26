@@ -1,3 +1,11 @@
+== A quick note
+
+This is a fork of the official repository, plus a couple community-provided
+patches to fix compile issues on newer raspberrypi toolchains.
+
+
+== Overview
+
 mochad is a Linux TCP gateway daemon for the X10 CM15A RF (radio frequency) and
 PL (power line) controller and the CM19A RF controller. 
 
