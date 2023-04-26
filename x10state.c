@@ -23,9 +23,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
-#include "global.h"
+// #include "global.h"   // S Porter TO PREVENT DUPLICATE DECLARATION ERRORS 02/04/22
 #include "x10state.h"
 #include "decode.h"
+
+#include "mochad.h"         // ADDED 02/04/22 S Porter
 
 /* 16 house codes and 16 unit codes = 256 devices
  * For normal (non-security) X10 devices.

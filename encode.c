@@ -82,11 +82,20 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <sys/socket.h>
-#include "global.h"
+// #include "global.h"      // TO STOP MULTIPLE DEFINITIONS S Porter 02/04/22
 #include "encode.h"
 #include "decode.h"
 #include "x10state.h"
 #include "x10_write.h"
+
+#include "mochad.h"         // ADDED 02/04/22 S Porter
+
+// ADD HERE S Porter 02/04/22
+extern struct SecEventRec {
+    unsigned char funct;
+    const char *name;
+};
+
 
 static void strupper(char *buf)
 {

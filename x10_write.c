@@ -27,9 +27,12 @@
 #include <ctype.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "global.h"
+// #include "global.h"   // S Porter TO PREVENT DUPLICATE DECLARATION  ERRORS 02/04/22
 #include "x10_write.h"
 
+#include "mochad.h"      // ADDED 02/04/22 S Porter
+
+extern int PollTimeOut;  // S Porter ADDED 02/04/22
 
 typedef struct x10out {
     size_t outlen;

@@ -17,6 +17,17 @@
  * along with mochad.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// ADDED HERE S Porter FROM GLOBAL.H, MADE "extern"
+// to stop multiple definition errors 02/04/22
+extern int Cm19a;
+extern int PollTimeOut;
+
+/* 1 bit per house code, 1=RF to PL, 0=off, default all house codes on */
+extern unsigned short RfToPl16;
+
+extern unsigned short RfToRf16;
+
+
 extern int raw_data;
 
 const char *findSecEventName(unsigned char secev);

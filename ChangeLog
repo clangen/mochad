@@ -1,3 +1,13 @@
+mochad-0.1.21
+
+    * 01/24/22: Fixed many compile errors on Rasberry PI - S Porter steve.porter@yahoo.com
+    * Added mochad.h file
+    * Added mod by J Jones 2018-12-14 here: https://sourceforge.net/p/mochad/discussion/1320002/thread/582c852aa0/
+ 
+mochad-0.1.19
+
+    * Heard rumblings of this version somewhere out there
+
 mochad-0.1.17
 
     * Fix for Linux distros using systemd-udev such as Raspbian 4.4.

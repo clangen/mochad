@@ -50,7 +50,11 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-#include "global.h"
+// #include "global.h"  // S Porter ADDED 02/04/22
+#include "mochad.h"     // S Porter ADDED 02/04/22
+
+extern int PollTimeOut; // S Porter ADDED 02/04/22
+
 
 #define SERVER_PORT     (1099)
 #define MAXCLISOCKETS   (32)
@@ -557,7 +561,10 @@ static int alloc_transfers(void)
     return 0;
 }
 
-int write_usb(unsigned char *buf, size_t len)
+// int write_usb(unsigned char *buf, size_t len)
+
+// S Porter: added mod by J Jones 2018-12-14 here: https://sourceforge.net/p/mochad/discussion/1320002/thread/582c852aa0/
+int write_usb(unsigned char *buf, int len)
 {
     int r, i;
 

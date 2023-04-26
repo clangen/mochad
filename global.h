@@ -30,11 +30,15 @@ unsigned short RfToPl16;
 
 unsigned short RfToRf16;
 
+/*  MOVED TO new file mochad.h by S Porter 02/04/22
 
 #define dbprintf(fmt, ...) _dbprintf(fmt, __FILE__,__LINE__, ## __VA_ARGS__)
 int _dbprintf(const char *fmt, ...);
 
-int write_usb(unsigned char *buf, size_t len);
+// int write_usb(unsigned char *buf, size_t len);
+
+// S Porter: added mod by J Jones 2018-12-14 here: https://sourceforge.net/p/mochad/discussion/1320002/thread/582c852aa0/
+int write_usb(unsigned char *buf, int len);     
 
 int statusprintf(int fd, const char *fmt, ...);
 int sockprintf(int fd, const char *fmt, ...);
@@ -49,4 +53,4 @@ int or20client(int fd);
 
 int del_client(int fd);
 
-
+*/

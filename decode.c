@@ -24,11 +24,21 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <sys/timeb.h>
-#include "global.h"
+// #include "global.h"     // TO STOP MULTIPLE COMPILE DEFINITION ERRORS S Porter 02/04/22
 #include "decode.h"
 #include "x10state.h"
 #include "x10_write.h"
 #include "encode.h"
+
+#include "mochad.h"         // ADDED 02/04/22 S Porter
+
+
+// ADDED HERE S Porter 02/04/22
+extern struct SecEventRec {
+    unsigned char funct;
+    const char *name;
+};
+
 
 union x10addr {
     unsigned char houseunit;    // Normalized codes 7..4 house 3..0 unit
@@ -376,6 +386,7 @@ void cm15a_decode_plc(int fd, unsigned char *buf, size_t len)
  * 1<<2    delay 0=max, 1=min
  * 1<<0    1=battery low?, 0=battery OK
  */
+ 
 static const struct SecEventRec SecEventNames[] = {
     {0x0C, "Motion_alert_MS10A"},
     {0x8C, "Motion_normal_MS10A"},

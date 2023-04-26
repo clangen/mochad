@@ -17,17 +17,25 @@
  * along with mochad.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int processcommandline(int fd, char *aLine);
+// THIS FILE ADDED BY S Porter 02/04/22 TO CLEAN UP COMPILE ERRORS
 
-void cm15a_encode(int fd, unsigned char * buf, size_t buflen);
+#define dbprintf(fmt, ...) _dbprintf(fmt, __FILE__,__LINE__, ## __VA_ARGS__)
+int _dbprintf(const char *fmt, ...);
 
-// ADDED HERE S Porter FROM GLOBAL.H, MADE "extern"
-// to stop multiple definition errors 02/04/22
-extern int Cm19a;
-extern int PollTimeOut;
+// int write_usb(unsigned char *buf, size_t len)
 
-/* 1 bit per house code, 1=RF to PL, 0=off, default all house codes on */
-extern unsigned short RfToPl16;
+// S Porter: added mod by J Jones 2018-12-14 here: https://sourceforge.net/p/mochad/discussion/1320002/thread/582c852aa0/
+int write_usb(unsigned char *buf, int len);
 
-extern unsigned short RfToRf16;
+int statusprintf(int fd, const char *fmt, ...);
+int sockprintf(int fd, const char *fmt, ...);
 
+void hexdump(void *p, size_t len);
+
+void sockhexdump(int fd, void *p, size_t len);
+
+void mh_sockhexdump(int fd, void *p, size_t len);
+
+int or20client(int fd);
+
+int del_client(int fd);
